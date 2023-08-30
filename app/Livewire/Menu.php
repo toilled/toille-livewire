@@ -11,8 +11,11 @@ use Livewire\Component;
 
 class Menu extends Component
 {
+    public int $selected = 1;
+
     public function page($id)
     {
+        $this->selected = $id;
         $this->dispatch('page', $id)->to('content');
     }
 
